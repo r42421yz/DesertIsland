@@ -1,0 +1,64 @@
+.cmt_img img{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+
+#recipe_table{
+    margin: auto;
+}
+
+.heart-box{
+    position: relative;
+    cursor: pointer;
+}
+
+.heart-box input{
+    display: none;
+}
+
+.heart-box i{
+    font-size: 24px;
+    color: #ccc;
+}
+
+.heart-box input:checked + i{
+    color: red;
+}
+
+#recipeImages{
+    position: relative;
+    display: inline-block;
+}
+
+.prevButton {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    /* background-color: #3498db; */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.nextButton{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    /* background-color: #3498db; */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+
+}
+#myImg{
+    height: 200px;
+    /* width: 400px; */
+}

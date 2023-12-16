@@ -1,0 +1,19 @@
+
+img{
+    height: 200px;
+    width: 200px;
+}
+
+a{
+    /* color: hotpink; */
+}
+
+.container div{
+    display: inline-block;
+    margin: 10px;
+}
+
+.recipe{
+    display: inline-block;
+    margin: 10px; 
+}

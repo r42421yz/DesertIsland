@@ -1,0 +1,22 @@
+input[type="file"]{
+    display: none;
+}
+
+.custom-file-input{
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.camera-icon{
+    margin-right: 5px;
+}
+
+img{
+    height: 200px;
+}
