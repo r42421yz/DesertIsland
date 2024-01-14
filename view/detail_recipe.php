@@ -26,7 +26,7 @@
     $avatar = $result['avatar'];
     $avatar_type = $result['avatar_type'];
 
-    // list for recipe_images
+    // list of recipe_images
     $images=[];
 
     // get recipe details
@@ -42,8 +42,15 @@
         $recipe_title = $result['recipe_title'];
         $instruction = $result['instruction'];
         $time = $result['cooking_time'];
+        // $created_time = $result['created_at'];
+        // $likes_number = $result['likes_number'];
         $author = $result['user_id'];
     }
+
+    // check if user is the author of the recipe
+    if($user_id == $author){
+        // show edit recipe link
+    } 
 
     // check if user has liked the recipe
     $sql = "SELECT * FROM like_recipe WHERE user_id = :user AND recipe_id = :recipe";
@@ -76,17 +83,22 @@
     }
 ?>
 
+
+<!-- stylesheet -->
 <link rel="stylesheet" type="text/css" href="http://localhost/DesertIslandDishes/css/detail_recipe.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
+<!-- html -->
 <section>
     <div class="container">
 
+        <!-- like button -->
         <label class="heart-box">
             <input type="checkbox" id="like-box" onclick="handleLikeToggle()" <?php if ($isChecked) echo 'checked'; ?>>
             <i class="fas fa-heart"></i>
         </label>
 
+        <!-- recipe_detail -->
         <div class="detail">
             <?php
                 echo("<h1>".$recipe_title."</h1>");
@@ -117,6 +129,7 @@
 
         <hr/>
 
+        <!-- recipe_comment -->
         <div class="comment">
             <!-- add comments -->
             <form id="commentForm" name="commentForm">
@@ -132,6 +145,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+
     var recipeId = <?php echo json_encode($recipe); ?>;
     var recipeTitle = <?php echo json_encode($recipe_title); ?>;
     var logged = <?php echo json_encode($logged); ?>;
@@ -143,8 +157,7 @@
 
         //load top-level comment
         fetchComments(recipeId);
-
-    
+        
         $('#commentsContainer').on('click', '.replyButton', function(){
             var parentId = $(this).data('parentid');
             showReplyForm(parentId);
@@ -153,7 +166,6 @@
         $('#commentsContainer').on('click', '.cancelReplyButton', function(){
             hideReplyForm();
         });
-
         // Toggle show/hide replies
         // problem:default is show replies instead of hide
         $('#commentsContainer').on('click', '.toggleRepliesButton', function () {
@@ -169,6 +181,7 @@
         });
 
     });
+
 
     function handleLikeToggle() {
         var likeBox = document.getElementById("like-box");
@@ -233,7 +246,6 @@
                 console.error('Error:', error);
             }
         });
-
     }
 
     function submitReply(parentId, replyId){

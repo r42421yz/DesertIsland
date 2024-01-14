@@ -30,7 +30,7 @@
             echo '<button class="replyButton" data-parentid="' . $comment_id . '">Reply</button>';
             echo '<button class="toggleRepliesButton" data-parentid="' . $comment_id . '">Show Replies</button>';
             // Fetch and display replies (recursive call)
-            echo '<div class="reply" style="color:red;margin-left:50px" data-parentid="' . $comment_id . '" >';
+            echo '<div class="reply" style="color:red;margin-left:50px;display:none;" data-parentid="' . $comment_id . '" >';
             fetchReplies($comment_id, $recipe_id, $user_id);
             echo '</div>';
             echo '</div>';

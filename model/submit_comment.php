@@ -26,8 +26,8 @@
         echo ("<button class='replyButton' data-parentid='" . $pdo->lastInsertId() ."'>Reply</button>");
         echo ("</div>");
 
-        $author = get_recipe_author($recipe_id);
-        inform_author($author, $user_id, $text, $recipe_id);
+        // $author = get_recipe_author($recipe_id);
+        // inform_author($author, $user_id, $text, $recipe_id);
     }
 
     function get_recipe_author($recipe_id){

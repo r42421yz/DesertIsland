@@ -38,7 +38,7 @@
             <a href="http://localhost/DesertIslandDishes/view/recipes.php">Recipes</a>
             <a href="http://localhost/DesertIslandDishes/view/ranking.php">Ranking</a>
             <a href="<?php if(!$logged) echo($LoginPath); else echo ($UserPath)?>">User profile</a>
-            <a href="<?php if(!$logged) echo($LoginPath); else echo ($UserPath)?>"><?php if(!$logged) echo("Login"); else echo ("Logout")?></a>
+            <a href="<?php if(!$logged) echo($LoginPath); else echo ($LogoutPath)?>"><?php if(!$logged) echo("Login"); else echo ("Logout")?></a>
         </div>
     </div>
 </body>
